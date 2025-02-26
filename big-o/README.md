@@ -90,3 +90,47 @@ How would we determine and label these differences?
 - Different machines will record different times.
 - The same machine will record different times.
 - For fast algorithms, speed measurements may not be precise enough.
+
+## If Not Time, Then What?
+
+Rather than counting seconds, which are so variable, we can count the number of simple operations the computer has to perform, which remains constant from machine to machine.
+
+The time will always be determined by the number of operations the computer has to perform.
+
+## Counting Operations
+
+Example:
+
+```javascript
+function addUpTo(n) {
+  return (n * (n + 1)) / 2
+}
+```
+
+- 3 operations regardless of the size of n.
+- Multiplication, addition, and division.
+
+Example:
+
+```javascript
+function addUpTo(n) {
+  let total = 0
+
+  for (let i = 1; i <= n; i++) {
+    total += i
+  }
+
+  return total
+}
+```
+
+- n additions and n assignments.
+- The number of operations grows roughly proportionally with n.
+
+## Counting is Hard!
+
+Depending on what we count, the number of operations can be as low as _2n_ or as high as _5n + 2_.
+
+But regardless of the exact number, the number of operations grows roughly proportionally with n.
+
+"As n grows, the number of operations grows roughly proportionally with n."
