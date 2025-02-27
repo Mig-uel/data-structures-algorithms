@@ -1,4 +1,4 @@
-## Analyzing Performance of Arrays and Objects
+# Analyzing Performance of Arrays and Objects
 
 ## Before We Begin
 
