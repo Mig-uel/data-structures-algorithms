@@ -82,3 +82,32 @@ _Write a function which takes in a string and returns counts of each character i
    - `charCount("")` should return `{}`
 4. Explore Examples with Invalid Inputs
    - `charCount(123)` should return `Invalid input`
+
+## Break It Down
+
+- Explicitly write out the steps you need to take.
+- This forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and have to worry about details (e.g. language syntax) as well.
+
+Example:
+
+_Write a function which takes in a string and returns counts of each character in the string._
+
+```js
+function charCount(str) {
+  // do something
+  // return an object with keys that are lowercase alphanumeric characters in the string; values should be the counts for those characters
+}
+```
+
+```js
+function charCount(str) {
+  // make object to return at end
+  //
+  // loop over string, for each character
+  // if the char is a number/letter AND in our object, add one to count
+  // if the char is a number/letter AND not in our object, add it and set value to 1
+  // if char is something else (space, period, etc.) don't do anything
+  //
+  // return object at end
+}
+```
