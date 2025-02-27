@@ -152,3 +152,79 @@ function charCount(str) {
   return result
 }
 ```
+
+## Look Back and Refactor
+
+Refactoring Questions:
+
+- Can you check the result?
+- Can you derive the result differently?
+- Can you understand it at a glance?
+- Can you use the result or method for some other problem?
+- Can you improve the performance of your solution?
+- Can you think of other ways to refactor?
+- How have other people solved this problem?
+
+Example:
+
+_Write a function which takes in a string and returns counts of each character in the string._
+
+```js
+function isAlphanumeric(char) {
+  return /[a-z0-9]/.test(char)
+}
+
+function charCount(str) {
+  // make object to return at end
+  const result = {}
+
+  // loop over string, for each character
+  for (let i = 0; i < str.length; i++) {
+    // if char is something else (space, period, etc.) don't do anything
+    if (!isAlphanumeric(str[i])) continue
+
+    const char = str[i].toLowerCase()
+
+    // if the char is a number/letter AND in our object, add one to count
+    if (result[char]) {
+      result[char]++
+    } else {
+      // if the char is a number/letter AND not in our object, add it and set value to 1
+      result[char] = 1
+    }
+  }
+
+  // return object at end
+  return result
+}
+```
+
+**Refactor**:
+
+```js
+const isAlphanumeric = (char) => /[a-z0-9]/.test(char)
+
+function charCount(str) {
+  // make object to return at end
+  const result = {}
+
+  // loop over string, for each character
+  for (let char of str) {
+    // if char is something else (space, period, etc.) don't do anything
+    if (!isAlphanumeric(char)) continue
+
+    char = i.toLowerCase()
+
+    // if the char is a number/letter AND in our object, add one to count
+    if (result[char]) {
+      result[char]++
+    } else {
+      // if the char is a number/letter AND not in our object, add it and set value to 1
+      result[char] = 1
+    }
+  }
+
+  // return object at end
+  return result
+}
+```
