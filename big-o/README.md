@@ -245,3 +245,38 @@ function double(arr) {
 ```
 
 The space complexity of this function is O(n) because the size of the `newArr` array scales with the size of the input `arr`. The larger the input, the more space we need.
+
+## Logarithms
+
+We've encountered some of the most common complexities: O(1), O(n), O(n^2). Sometimes Big-O expressions involve more complex mathematical expressions. One of the most common is the logarithm.
+
+## What is a Logarithm?
+
+A logarithm is the inverse of exponentiation. Just like division and multiplication are inverse operations, logarithms and exponentiation are inverse operations.
+
+The logarithm of a number roughly measures the number of times you can divide that number by 2 before you get a value that's less than or equal to 1.
+
+- log2(8) = 3 because 2^3 = 8
+- log2(value) = exponent => 2^exponent = value
+
+Most of the time, we don't care about the base of the logarithm. When we talk about Big-O, we are usually talking about the base-2 logarithm: log2.
+
+Rule of thumb: the logarithm of a number roughly measures the number of times you can divide that number by 2 **before you get a value that's less than or equal to 1**.
+
+## Logarithmic Time Complexity
+
+Logarithmic time complexity is great! It's the best time complexity after constant time complexity. It's even better than linear time complexity.
+
+## Who Cares?
+
+- Certain searching algorithms have logarithmic time complexity.
+- Efficient sorting algorithms involve logarithms.
+- Recursion sometimes involves logarithmic space complexity.
+
+## Recap
+
+- To analyze the performance of an algorithm, we use Big-O Notation.
+- Big-O Notation can give us a high-level understanding of the time or space complexity of an algorithm.
+- Big-O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?).
+- The time or space complexity (as measured by Big-O) depends only on the algorithm, not the hardware used to run the algorithm.
+- Big-O Notation is everywhere, so get used to it!
