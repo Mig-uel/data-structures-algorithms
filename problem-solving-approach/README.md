@@ -111,3 +111,44 @@ function charCount(str) {
   // return object at end
 }
 ```
+
+e
+
+## Solve/Simplify
+
+Solve the problem if you can. If you can't, solve a simpler problem.
+
+**Simplify**:
+
+- FInd the core difficulty in what you're trying to do
+- Temporarily ignore that difficulty
+- Write a simplified solution
+- Then incorporate that difficulty back in
+
+Example:
+
+_Write a function which takes in a string and returns counts of each character in the string._
+
+```js
+function charCount(str) {
+  // make object to return at end
+  const result = {}
+
+  // loop over string, for each character
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i].toLowerCase()
+
+    // if the char is a number/letter AND in our object, add one to count
+    if (result[char]) {
+      result[char]++
+    } else {
+      // if the char is a number/letter AND not in our object, add it and set value to 1
+      result[char] = 1
+    }
+    // if char is something else (space, period, etc.) don't do anything
+  }
+
+  // return object at end
+  return result
+}
+```
