@@ -9,3 +9,26 @@ Let's spend a couple of minutes analyzing the things we do all the time in JavaS
 - Understand how objects and arrays work, through the lens of Big O
 - Explain why adding elements to the beginning of an array is costly
 - Compare and contrast the runtime for arrays and objects, as well as built-in methods
+
+## Objects
+
+Objects are unordered, key-value pairs.
+
+## When To Use Objects
+
+- When you don't need order
+- When you need fast access/insertion and removal
+
+## Big O of Objects
+
+Insertion - O(1) (constant time)
+Removal - O(1) (constant time)
+Searching - O(n) (linear time)
+Access - O(1) (constant time)
+
+## Big O of Object Methods
+
+Object.keys - O(n) (linear time)
+Object.values - O(n) (linear time)
+Object.entries - O(n) (linear time)
+hasOwnProperty - O(1) (constant time)
