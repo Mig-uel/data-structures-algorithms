@@ -172,3 +172,76 @@ For a sorting algorithm like Quick Sort, the worse-case scenario happens when th
 Upper bound is a guarantee that the algorithm will not perform worse than the stated Big-O.
 Worst-case scenario is a specific situation where the algorithm performs at its worst, which may or may not be the upper bound.
 
+## Simplifying Big-O Expressions
+
+When determining the time complexity of an algorithm, there are some helpful rules of thumb for Big-O expressions. There rules are consequences of the definition of Big-O:
+
+- Constants don't matter:
+  - O(2n) is O(n)
+  - O(500) is O(1)
+  - O(13n^2) is O(n^2)
+- Smaller terms don't matter:
+  - O(n + 10) is O(n)
+  - O(1000n + 50) is O(n)
+  - O(n^2 + 5n + 8) is O(n^2)
+
+## Big-O Shorthands
+
+Analyzing complexity with Big-O can get complicated but there are some rules of thumb that can help. There rules won't always work but are a helpful starting point:
+
+1. Arithmetic operations are constant (subtracting, diving, multiplying, adding)
+2. Variable assignment is constant (let x = 5)
+3. Accessing elements in an array (by index) or object (by key) is constant
+4. In a loop, the complexity is the length of the loop times the complexity of whatever happens inside the loop
+
+## Space Complexity
+
+So far, we've been focusing on **time complexity**: how can we analyze the runtime of an algorithm as the size of the inputs increases?
+
+We can also use Big-O notation to analyze **space complexity**: how much additional memory do we need to allocate in order to run the code in our algorithm?
+
+## What About The Inputs?
+
+Sometimes you'll hear the term "auxiliary space complexity" to refer to the space required by the algorithm, not including space taken up by the inputs.
+
+We only care about the space taken up by the algorithm itself and not the space taken up by the inputs.
+
+## Space Complexity in JS
+
+Rules of thumb:
+
+- Most primitives (booleans, numbers, undefined, null) are constant space.
+- Strings require O(n) space (where n is the string length).
+- Reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects).
+
+Example 1:
+
+```javascript
+function sum(arr) {
+  let total = 0
+
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i]
+  }
+
+  return total
+}
+```
+
+The space complexity of this function is O(1) because the only additional space we are using is the variable `total`. Remember, most primitives (like numbers) are constant space.
+
+Example 2:
+
+```javascript
+function double(arr) {
+  let newArr = []
+
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(2 * arr[i])
+  }
+
+  return newArr
+}
+```
+
+The space complexity of this function is O(n) because the size of the `newArr` array scales with the size of the input `arr`. The larger the input, the more space we need.
