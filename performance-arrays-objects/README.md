@@ -48,3 +48,15 @@ Insertion - It depends...
 Removal - It depends...
 Searching - O(n) (linear time)
 Access - O(1) (constant time)
+
+## Big O of Array Methods
+
+push - O(1) (constant time)
+pop - O(1) (constant time)
+shift - O(n) (linear time)
+unshift - O(n) (linear time)
+concat - O(n) (linear time)
+slice - O(n) (linear time)
+splice - O(n) (linear time)
+sort - O(n \* log n) (linearithmic time)
+forEach/map/filter/reduce/etc. - O(n) (linear time)
