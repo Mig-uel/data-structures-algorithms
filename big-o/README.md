@@ -134,3 +134,41 @@ Depending on what we count, the number of operations can be as low as _2n_ or as
 But regardless of the exact number, the number of operations grows roughly proportionally with n.
 
 "As n grows, the number of operations grows roughly proportionally with n."
+
+## Introducing Big-O
+
+Big-O Notation is a way to formalize fuzzy counting. It allows us to talk formally about how the runtime of an algorithm grows as the inputs grow. It's a way of describing the relationship between the input to a function and how it changes the runtime of that function.
+
+We don't care about the details, only the broad trends.
+
+## Big-O Definition
+
+We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases.
+
+(as n scales, the runtime scales relative to n)
+
+- f(n) could be linear (f(n) = n)
+- f(n) could be quadratic (f(n) = n^2)
+- f(n) could be constant (f(n) = 1)
+- f(n) could be something entirely different!
+
+When we are talking about Big-O, we are talking about the worst-case scenario. We are talking about the upper bound of the runtime.
+
+**Upper Bound**:
+
+- The worst-case scenario.
+- It an algorithm is O(n), it means that the runtime grows linearly with the input size and it won't be worse than that.
+- If it's O(n^2), it means that the runtime grows quadratically with the input size and it won't be worse than that.
+- Think of the upper bound as a ceiling for runtime growth.
+
+**Worse-Case Scenario**:
+
+When we say worse-case scenario, we're talking about the most expensive or slowest performance the algorithm could possibly have, given any input. This happens when the input to the algorithm is arranged in the least favorable way for the algorithm to execute efficiently.
+
+In a linear search, if you are searching for an element in an array of size n, the worse-case scenario is when the element is at the very end of the array or not in the array at all. The algorithm would have to iterate through the entire array, checking all n elements, so the runtime would be O(n).
+
+For a sorting algorithm like Quick Sort, the worse-case scenario happens when the pivot selection is consistently poor (e.g. picking the smallest or largest element in a sorted or reverse-sorted array). This would result in a runtime of O(n^2), even though the average case is much better at O(n log n).
+
+Upper bound is a guarantee that the algorithm will not perform worse than the stated Big-O.
+Worst-case scenario is a specific situation where the algorithm performs at its worst, which may or may not be the upper bound.
+
