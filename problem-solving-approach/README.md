@@ -228,3 +228,22 @@ function charCount(str) {
   return result
 }
 ```
+
+## Recap
+
+- Understand the problem
+  - Ask questions to clarify the problem
+- Explore concrete examples
+  - Write examples down
+  - Understand the problem better
+- Break it down
+  - Write out the steps you need to take
+  - Layout the game plan
+  - Know where you're going before you start
+- Solve/Simplify
+  - Solve the problem if you can
+  - If you can't, solve a simpler problem
+- Look back and refactor
+  - Refactor your code
+  - Look at other solutions
+  - Optimize your code
