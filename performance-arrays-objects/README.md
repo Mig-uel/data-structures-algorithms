@@ -32,3 +32,19 @@ Object.keys - O(n) (linear time)
 Object.values - O(n) (linear time)
 Object.entries - O(n) (linear time)
 hasOwnProperty - O(1) (constant time)
+
+## Arrays
+
+Arrays are ordered lists.
+
+## When To Use Arrays
+
+- When you need order
+- When you need fast access/insertion and removal (sort of...)
+
+## Big O of Arrays
+
+Insertion - It depends...
+Removal - It depends...
+Searching - O(n) (linear time)
+Access - O(1) (constant time)
