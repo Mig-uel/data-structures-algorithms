@@ -27,3 +27,58 @@ Also, it's a common topic in coding interviews.
 3. Break It Down
 4. Solve/Simplify
 5. Look Back and Refactor
+
+## Understand the Problem
+
+1. Can I restate the problem in my own words?
+2. What are the inputs that go into the problem?
+3. What are the outputs that should come from the solution to the problem?
+4. Can the outputs be determined from the inputs? In other words, do I have enough information to solve the problem? (You may not be able to answer this question until you set about solving the problem.)
+5. How should I label the important pieces of data that are a part of the problem?
+
+Example:
+
+_Write a function which takes two numbers and returns their sum._
+
+1. Can I restate the problem in my own words?
+   - "Implement addition"
+2. What are the inputs that go into the problem?
+   - Integers?
+   - Floats?
+   - What about string for large numbers?
+3. What are the outputs that should come from the solution to the problem?
+   - Int? Float? String?
+4. Can the outputs be determined from the inputs?
+   - Yes
+5. How should I label the important pieces of data that are a part of the problem?
+   - `num1`, `num2`, `sum`
+
+## Explore Concrete Examples
+
+- Coming up with examples can help you understand the problem better.
+- Examples also provide sanity checks that your eventual solution works how it should.
+  - User stories
+  - Unit tests
+
+## Explore Examples
+
+- Start with simple examples
+  - Write down the simplest possible input and output
+- Progress to more complex examples
+- Explore examples with empty inputs
+- Explore examples with invalid inputs
+
+Example:
+
+_Write a function which takes in a string and returns counts of each character in the string._
+
+1. Start with Simple Examples
+   - `charCount("aaaa")` should return `{'a': 4}`
+   - `charCount("hello")` should return `{'h': 1, 'e': 1, 'l': 2, 'o': 1}`
+2. Progress to More Complex Examples
+   - `charCount("my phone number is 182763")`
+   - `charCount("Hello hi")`
+3. Explore Examples with Empty Inputs
+   - `charCount("")` should return `{}`
+4. Explore Examples with Invalid Inputs
+   - `charCount(123)` should return `Invalid input`
