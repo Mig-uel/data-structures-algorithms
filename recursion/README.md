@@ -76,3 +76,17 @@ function sumRange(num) {
   return num + sumRange(num - 1)
 }
 ```
+
+## Writing Factorial Iteratively
+
+```javascript
+function factorial(num) {
+  let total = 1
+
+  for (let i = num; i > 0; i--) {
+    total *= i
+  }
+
+  return total
+}
+```
