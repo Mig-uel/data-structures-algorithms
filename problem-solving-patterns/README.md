@@ -220,3 +220,79 @@ Explanation:
 
 Time Complexity: O(N)
 Space Complexity: O(1)
+
+## Multiple Pointers: Count Unique Values
+
+_Implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array. There can be negative numbers in the array, but it will always be sorted._
+
+`countUniqueValues([1, 1, 1, 1, 1, 2]) // 2`
+`countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]) // 7`
+`countUniqueValues([]) // 0`
+`countUniqueValues([-2, -1, -1, 0, 1]) // 4`
+
+My Solution:
+
+```javascript
+function countUniqueValues(arr) {
+  if (!arr.length) return 0
+
+  let first = 0
+  let second = 1
+  let uniqueValues = 0
+
+  while (second <= arr.length) {
+    if (arr[first] !== arr[second]) uniqueValues++
+
+    first++
+    second++
+  }
+
+  return uniqueValues
+}
+```
+
+Explanation:
+
+- The function takes an array as an argument.
+- If the array is empty, the function returns 0.
+- The function initializes three variables, `first`, `second`, and `uniqueValues`.
+- The function loops while `second` is less than or equal to the length of the array.
+- For each iteration, the function checks if the element at `first` is not equal to the element at `second`.
+- If the elements are not equal, the function increments `uniqueValues`.
+- The function increments `first` and `second` after each iteration.
+- If the loop completes, the function returns `uniqueValues`.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+
+Colt's Solution:
+
+```javascript
+function countUniqueValue(arr) {
+  if (!arr.length) return 0
+
+  let i = 0
+
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++
+      arr[i] = arr[j]
+    }
+  }
+
+  return i + 1
+}
+```
+
+Explanation:
+
+- The function takes an array as an argument.
+- If the array is empty, the function returns 0.
+- The function initializes a variable `i` to 0.
+- The function loops through the array starting from index 1.
+- For each iteration, the function checks if the element at `i` is not equal to the element at `j`.
+- If the elements are not equal, the function increments `i` and sets the element at `i` to the element at `j`.
+- If the loop completes, the function returns `i + 1`.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
