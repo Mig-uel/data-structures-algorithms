@@ -145,3 +145,78 @@ Explanation:
 - If the letter is not in `lookup`, the function returns false.
 - If the letter is in `lookup`, the function decrements the frequency of the letter in `lookup`.
 - If the loop completes, the function returns true.
+
+## Multiple Pointers Pattern
+
+Creating pointers or values that correspond to an index or position and move towards the beginning, end, or middle based on a certain condition.
+
+Very efficient for solving problems with minimal space complexity as well.
+
+Example 1:
+
+_Write a function sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. Return an array that includes both values that sum to zero or undefined if a pair does not exist._
+
+`sumZero([-3, -2, -1, 0, 1, 2, 3]) // [-3, 3]`
+`sumZero([-2, 0, 1, 3]) // undefined`
+`sumZero([1, 2, 3]) // undefined`
+
+Naive Solution:
+
+```javascript
+function sumZero(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        return [arr[i], arr[j]]
+      }
+    }
+  }
+}
+```
+
+Explanation:
+
+- The function takes an array as an argument.
+- The function loops through the array.
+- For each element in the array, the function loops through the rest of the array.
+- If the sum of the two elements is 0, the function returns an array with the two elements.
+- If the loop completes, the function returns undefined.
+
+Time Complexity: O(N^2)
+Space Complexity: O(1)
+
+Refactored Solution:
+
+```javascript
+function sumZero(arr) {
+  let left = 0
+  let right = arr.length - 1
+
+  // while left is less than right (not equal) we keep looping
+  while (left < right) {
+    let sum = arr[left] + arr[right]
+
+    if (sum === 0) {
+      return [arr[left], arr[right]]
+    } else if (sum > 0) {
+      right--
+    } else {
+      left++
+    }
+  }
+}
+```
+
+Explanation:
+
+- The function takes an array as an argument.
+- The function initializes two pointers, `left` and `right`.
+- The function loops while `left` is less than `right`.
+- For each iteration, the function calculates the sum of the elements at the `left` and `right` pointers.
+- If the sum is 0, the function returns an array with the two elements.
+- If the sum is greater than 0, the function decrements the `right` pointer.
+- If the sum is less than 0, the function increments the `left` pointer.
+- If the loop completes, the function returns undefined.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
