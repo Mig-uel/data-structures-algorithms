@@ -296,3 +296,94 @@ Explanation:
 
 Time Complexity: O(N)
 Space Complexity: O(1)
+
+## Sliding Window Pattern
+
+This pattern involves creating a window which can either be an array or number from one position to another.
+Depending on a certain condition, the window either increases or closes (and a new window is created).
+Very useful for keeping track of a subset of data in an array/string etc.
+
+Example 1:
+
+_Write a function called maxSubarraySum which accepts an array of integers and a number called n. The function should calculate the maximum sum of n consecutive elements in the array._
+
+`maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2) // 10`
+`maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4) // 17`
+`maxSubarraySum([4, 2, 1, 6], 1) // 6`
+`maxSubarraySum([4, 2, 1, 6, 2], 4) // 13`
+`maxSubarraySum([], 4) // null`
+
+Naive Solution:
+
+```javascript
+function maxSubarraySum(arr, num) {
+  if (num > arr.length) return null
+
+  let max = -Infinity
+
+  for (let i = 0; i < arr.length - num + 1; i++) {
+    let temp = 0
+
+    for (let j = 0; j < num; j++) {
+      temp += arr[i + j]
+    }
+
+    if (temp > max) {
+      max = temp
+    }
+  }
+
+  return max
+}
+```
+
+Explanation:
+
+- The function takes an array and a number as arguments.
+- If the number is greater than the length of the array, the function returns null.
+- The function initializes a variable `max` to -Infinity.
+- The function loops through the array up to `arr.length - num + 1`.
+- For each iteration, the function initializes a variable `temp` to 0.
+- The function then loops through the next `num` elements in the array and adds them to `temp`.
+- If `temp` is greater than `max`, the function sets `max` to `temp`.
+- If the loop completes, the function returns `max`.
+
+Time Complexity: O(N^2)
+Space Complexity: O(1)
+
+Refactored Solution:
+
+```javascript
+function maxSubArraySum(arr, num) {
+  if (num > arr.length) return null
+
+  let best = 0
+  let curr = 0
+
+  for (let index = 0; index < num; index++) {
+    best += arr[index]
+    curr += arr[index]
+  }
+
+  for (let index = num; index < arr.length; index++) {
+    curr = curr + arr[index] - arr[index - num]
+    best = Math.max(best, curr)
+  }
+
+  return best
+}
+```
+
+Explanation:
+
+- The function takes an array and a number as arguments.
+- If the number is greater than the length of the array, the function returns null.
+- The function initializes two variables, `best` and `curr`, to 0.
+- The function loops through the first `num` elements in the array and adds them to `best` and `curr`.
+- The function then loops through the rest of the array.
+- For each iteration, the function updates `curr` by adding the current element and subtracting the element `num` positions back.
+- The function updates `best` to the maximum of `best` and `curr`.
+- If the loop completes, the function returns `best`.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
