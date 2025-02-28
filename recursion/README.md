@@ -90,3 +90,13 @@ function factorial(num) {
   return total
 }
 ```
+
+## Writing Factorial Recursively
+
+```javascript
+function factorial(num) {
+  if (num === 1) return 1
+
+  return num * factorial(num - 1)
+}
+```
