@@ -33,3 +33,36 @@ In almost all program languages, there is a built in data structure that manages
 
 - You're used to functions being pushed on the call stack and popped off when they are done
 - When we write recursive functions, we keep pushing new functions onto the call stack!
+
+## How Recursive Functions Work
+
+Recursion functions invoke the same function with a different input until you reach your base case!
+
+## Base Case
+
+The condition when the recursion ends. **This is the most important concept to understand**
+
+## Two Essential Parts of a Recursive Function
+
+**Base Case**
+
+- the condition when the recursion ends
+
+**Different Input**
+
+- the input to the recursive function must be different in some way
+
+## Our First Recursive Function
+
+```javascript
+function countDown(num) {
+  if (num <= 0) {
+    console.log('All done!')
+    return
+  }
+
+  console.log(num)
+  num--
+  countDown(num)
+}
+```
