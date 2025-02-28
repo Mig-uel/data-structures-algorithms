@@ -100,3 +100,9 @@ function factorial(num) {
   return num * factorial(num - 1)
 }
 ```
+
+## Common Recursion Pitfalls
+
+- No base case or base case is wrong
+- Forgetting to return or returning the wrong thing
+- Stack overflow!
