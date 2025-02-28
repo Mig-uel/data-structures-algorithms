@@ -66,3 +66,13 @@ function countDown(num) {
   countDown(num)
 }
 ```
+
+## Our Second Recursive Function
+
+```javascript
+function sumRange(num) {
+  if (num === 1) return 1
+
+  return num + sumRange(num - 1)
+}
+```
