@@ -24,7 +24,7 @@ This pattern uses objects or sets to collect values/frequencies of values. This 
 
 Example 1:
 
-**Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same.**
+_Write a function called same, which accepts two arrays. The function should return true if every value in the array has it's corresponding value squared in the second array. The frequency of values must be the same._
 
 Naive Solution:
 
@@ -96,4 +96,52 @@ Explanation:
 - For each key, the function checks if the square of the key is in `frequencyCounter2`.
 - If the square of the key is not in `frequencyCounter2`, the function returns false.
 - If the frequency of the square of the key is not the same as the frequency of the key, the function returns false.
+- If the loop completes, the function returns true.
+
+Example 2:
+
+_Given two strings, write a function to determine if the second string is an anagram of the first. An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman._
+
+Frequency Counter Solution:
+
+```javascript
+function validAnagram(first, second) {
+  if (first.length !== second.length) return false
+
+  const lookup = {}
+
+  for (let i = 0; i < first.length; i++) {
+    let letter = first[i]
+
+    // if letter exists, increment, otherwise set to 1
+    lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1)
+  }
+
+  for (let i = 0; i < second.length; i++) {
+    let letter = second[i]
+
+    // can't find letter or letter is zero then it's not an anagram
+    if (!lookup[letter]) {
+      return false
+    } else {
+      // decrement the letter
+      lookup[letter] -= 1
+    }
+  }
+
+  return true
+}
+```
+
+Explanation:
+
+- The function takes two strings as arguments.
+- If the length of the strings are not the same, the function returns false.
+- The function initializes an empty object, `lookup`.
+- The function loops through the first string.
+- For each letter in the first string, the function increments the frequency of the letter in `lookup`.
+- The function then loops through the second string.
+- For each letter in the second string, the function checks if the letter is in `lookup`.
+- If the letter is not in `lookup`, the function returns false.
+- If the letter is in `lookup`, the function decrements the frequency of the letter in `lookup`.
 - If the loop completes, the function returns true.
