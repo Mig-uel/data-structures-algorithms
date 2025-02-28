@@ -106,3 +106,45 @@ function factorial(num) {
 - No base case or base case is wrong
 - Forgetting to return or returning the wrong thing
 - Stack overflow!
+
+## Helper Method Recursion
+
+### Helper Method Pattern
+
+```javascript
+function outer(input) {
+  const outerScopedVariable = []
+
+  function helper(helperInput) {
+    // modify the outerScopedVariable
+    helper(helperInput--)
+  }
+
+  helper(input)
+  return outerScopedVariable
+}
+```
+
+It's a pattern where we have an outer function that's not recursive and a recursive inner function that does the work.
+
+**Implementation**:
+
+```javascript
+function collectOddValues(arr) {
+  let result = []
+
+  function helper(helperInput) {
+    if (helperInput.length === 0) return
+
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0])
+    }
+
+    helper(helperInput.slice(1))
+  }
+
+  helper(arr)
+
+  return result
+}
+```
