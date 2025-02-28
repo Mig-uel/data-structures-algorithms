@@ -387,3 +387,76 @@ Explanation:
 
 Time Complexity: O(N)
 Space Complexity: O(1)
+
+## Divide and Conquer
+
+This pattern involves dividing a data set into smaller chunks and then repeating a process with a subset of data.
+
+This pattern can tremendously decrease time complexity.
+
+Example 1:
+
+_Given a sorted array of integers, write a function called search, that accepts a value and returns the index where the value passed to the function is located. If the value is not found, return -1._
+
+`search([1, 2, 3, 4, 5, 6], 4) // 3`
+`search([1, 2, 3, 4, 5, 6], 6) // 5`
+`search([1, 2, 3, 4, 5, 6], 11) // -1`
+
+Naive Solution:
+
+```javascript
+function search(arr, el) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === el) return i
+  }
+
+  return -1
+}
+```
+
+Explanation:
+
+- The function takes an array and an element as arguments.
+- The function loops through the array.
+- If the element is found in the array, the function returns the index.
+- If the loop completes, the function returns -1.
+
+Time Complexity: O(N)
+Space Complexity: O(1)
+
+Refactored Solution:
+
+```javascript
+function search(array, val) {
+  let min = 0
+  let max = array.length - 1
+
+  while (min <= max) {
+    let middle = Math.floor((min + max) / 2)
+    let current = array[middle]
+
+    if (array[middle] < val) {
+      min = middle + 1
+    } else if (array[middle] > val) {
+      max = middle - 1
+    } else return middle
+  }
+
+  return -1
+}
+```
+
+Explanation:
+
+- The function takes an array and an element as arguments.
+- The function initializes two variables, `min` and `max`, to 0 and the length of the array minus 1, respectively.
+- The function loops while `min` is less than or equal to `max`.
+- For each iteration, the function calculates the middle index of the array.
+- The function then checks if the element at the middle index is less than the value.
+- If the element is less than the value, the function updates `min` to the middle index plus 1.
+- If the element is greater than the value, the function updates `max` to the middle index minus 1.
+- If the element is equal to the value, the function returns the middle index.
+- If the loop completes, the function returns -1.
+
+Time Complexity: O(log N)
+Space Complexity: O(1)
