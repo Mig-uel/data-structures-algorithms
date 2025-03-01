@@ -155,3 +155,35 @@ Let's search for 15.
 - Divide the left half of the array in half
 - Compare the middle element (15) to the target value (15)
 - We found the target value!
+
+## Binary Search Pseudocode
+
+- This function accepts a sorted array and a value
+- Create a left pointer at the start of the array, and a right pointer at the end of the array
+- While the left pointer comes before the right pointer:
+  - Create a pointer in the middle
+  - If you find the value you want, return the index
+  - If the value is too small, move the left pointer up
+  - If the value is too large, move the right pointer down
+- If you never find the value, return -1
+
+```js
+function binarySearch(arr, val) {
+  let left = 0
+  let right = arr.length - 1
+
+  while (left <= right) {
+    const middle = Math.floor((left + right) / 2)
+    const current = arr[middle]
+
+    if (current === val) return middle
+    if (current < val) left = middle + 1
+    if (current > val) right = middle - 1
+  }
+
+  return -1
+}
+```
+
+The time complexity of binary search is O(log n).
+The space complexity of binary search is O(1).
