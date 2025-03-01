@@ -24,3 +24,22 @@ There are many different ways to sort things, and different techniques have thei
 - Implement selection sort
 - Implement insertion sort
 - Understand why it is important to learn these simpler sorting algorithms
+
+## JavaScript Sort Method
+
+JavaScript has a built-in sorting method for arrays. It's called `sort`.
+
+- The built-in sort method accepts an optional comparator function
+- You can use this comparator function to tell JavaScript how you want it to sort
+- The comparator looks at pairs of elements (a and b), determines their sort order based on the return value
+  - If it returns a negative number, a should come before b
+  - If it returns a positive number, a should come after b
+  - If it returns 0, a and b are the same as far as the sort is concerned
+
+```javascript
+function numberCompare(num1, num2) {
+  return num1 - num2
+}
+
+[6, 4, 15, 10].sort(numberCompare) // [4, 6, 10, 15]
+```
