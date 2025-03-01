@@ -41,5 +41,33 @@ function numberCompare(num1, num2) {
   return num1 - num2
 }
 
-[6, 4, 15, 10].sort(numberCompare) // [4, 6, 10, 15]
+;[6, 4, 15, 10].sort(numberCompare) // [4, 6, 10, 15]
+```
+
+## Bubble Sort
+
+A sorting algorithm where the largest values bubble up to the top!
+
+- Start looping from the end of the array towards the beginning with a variable called i
+- Start an inner loop with a variable called j from the beginning until i - 1
+- If arr[j] is greater than arr[j+1], swap those two values!
+- Return the sorted array
+
+```javascript
+function bubbleSort(arr) {
+  let noSwaps
+  for (let i = arr.length; i > 0; i--) {
+    noSwaps = true
+    for (let j = 0; j < i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+        noSwaps = false
+      }
+    }
+    if (noSwaps) break
+  }
+  return arr
+}
 ```
