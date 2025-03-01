@@ -113,3 +113,6 @@ function linearSearch(arr, val) {
   return -1
 }
 ```
+
+The time complexity of linear search is O(n).
+The space complexity of linear search is O(1).
