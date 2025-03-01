@@ -116,3 +116,9 @@ function linearSearch(arr, val) {
 
 The time complexity of linear search is O(n).
 The space complexity of linear search is O(1).
+
+## Linear Search Big O
+
+- Best Case: O(1) (if the value is the first element in the array)
+- Average Case: O(n) (if the value is in the array)
+- Worst Case: O(n) (if the value is not in the array)
