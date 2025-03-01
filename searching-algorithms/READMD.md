@@ -122,3 +122,36 @@ The space complexity of linear search is O(1).
 - Best Case: O(1) (if the value is the first element in the array)
 - Average Case: O(n) (if the value is in the array)
 - Worst Case: O(n) (if the value is not in the array)
+
+## Binary Search
+
+Binary search is a much faster form of search.
+
+- Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time.
+
+However, there is a catch! **The array must be sorted**.
+
+## Dividing and Conquering
+
+Binary search works by dividing and conquering.
+
+- Given a sorted array, binary search will start by comparing the middle element of the array to the target value.
+- If the middle element is less than the target value, the target value is searched in the right half of the array.
+- If the middle element is greater than the target value, the target value is searched in the left half of the array.
+- This process continues until the target value is found or the subarray has no more elements.
+
+Example:
+
+Let's search for 15.
+
+`[1,3,4,6,8,9,11,12,15,17,18]`
+
+- Start by dividing the array in half
+- Compare the middle element (11) to the target value (15)
+- Since 11 < 15, we search the right half of the array
+- Divide the right half of the array in half
+- Compare the middle element (17) to the target value (15)
+- Since 17 > 15, we search the left half of the array
+- Divide the left half of the array in half
+- Compare the middle element (15) to the target value (15)
+- We found the target value!
