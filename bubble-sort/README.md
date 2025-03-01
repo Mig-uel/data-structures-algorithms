@@ -71,3 +71,6 @@ function bubbleSort(arr) {
   return arr
 }
 ```
+
+Time Complexity: O(n^2)
+Space Complexity: O(1)
