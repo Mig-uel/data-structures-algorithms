@@ -187,3 +187,9 @@ function binarySearch(arr, val) {
 
 The time complexity of binary search is O(log n).
 The space complexity of binary search is O(1).
+
+## Binary Search Big O
+
+- Best Case: O(1) (if the value is the middle element in the array)
+- Average Case: O(log n) (if the value is in the array)
+- Worst Case: O(log n) (if the value is not in the array)
